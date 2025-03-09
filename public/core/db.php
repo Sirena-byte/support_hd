@@ -19,9 +19,17 @@ function dbQuery(string $sql, array $params = []): PDOStatement {
 }
 
 function dbCheckError(PDOStatement $query): bool {
+    // Получаем информацию об ошибке из PDOStatement
     $errInfo = $query->errorInfo();
     if ($errInfo[0] !== PDO::ERR_NONE) {
-        echo $errInfo[2];
+        // Формируем сообщение об ошибке с временной меткой
+        $errorMessage = date('Y-m-d H:i:s') . " - Error: " . $errInfo[2] . PHP_EOL;
+        // Записываем сообщение в файл журнала ошибок
+        // 'error_log.txt' - имя файла, в который будут записываться ошибки
+        // FILE_APPEND - указывает, что новое сообщение будет добавлено в конец файла
+        file_put_contents('error_log.txt', $errorMessage, FILE_APPEND);
+        // Выводим общее сообщение для пользователя, чтобы не раскрывать детали ошибки
+        echo "Произошла ошибка. Пожалуйста, проверьте журнал ошибок.";
         exit();
     }
     return true;

@@ -1,4 +1,5 @@
 <?php
+global $page;
 /*
 $target - одномерный массив ассоциативный
 $fields - обычный, содержит список строк
@@ -14,3 +15,4 @@ function extractFields(array $target, array $fields): array
 	}
 	return $res;
 }
+

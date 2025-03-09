@@ -28,8 +28,8 @@
 						</li>
 						<li class="item">Организации
 							 <ul class="sub-sub-item">
-								  <li><a href="#">Список</a></li>
-								  <li><a href="#">Создать</a></li>
+								  <li><a href="?page=organization">Список</a></li>
+								  <li><a href="?page=addOrganization">Создать</a></li>
 								  <li>пункт 3-3</li>
 							 </ul>
 						</li>
