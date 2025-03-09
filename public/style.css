@@ -1,0 +1,228 @@
+body {
+	padding: 0;
+	margin: 0;
+}
+a{
+	color: #8b8181;
+	text-decoration: none;
+}
+
+.container {
+position: relative;
+margin: 0;
+min-height: 100%;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	background-color: #ebd9d9;
+	align-items: end;
+
+}
+.logo{
+	padding-bottom:15px;
+	padding-left: 10px;
+}
+.logo p {
+	font-size: 48px;
+	margin: 0;
+	color: rgb(177, 164, 164);
+	text-shadow: 3px 3px #5e5f60;
+}
+span{
+	font-size: 30px;
+	position: absolute;
+top: 45px;
+left: 135px;
+color: #413c3c;
+}
+.menu {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+	margin: 20px 0 20px 0;
+}
+
+.item-menu {
+	display: flex;
+	align-items: start;
+	list-style-type: none;
+	margin: 0 10px;
+	width: 200px;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px rgb(177, 164, 164);
+	justify-content: center;
+	align-items: center;
+	height: 40px;
+	position: relative; /* Добавлено для правильного позиционирования выпадающего меню */
+
+}
+
+.item-menu p {
+	margin: 0;
+	text-align: center;
+}
+
+.item-menu img {
+	width: 40px;
+	height: 40px;
+	margin: 0;
+	padding: 0;
+}
+.dropdown {
+	position: relative;
+	display: inline-block;
+
+}
+.menu-item {
+	cursor: pointer; /* Указатель при наведении */
+	display: flex;
+	text-align: center;
+
+}
+.menu-item p{
+	padding: 10px;
+	
+}
+.sub-item {
+	cursor: pointer; /* Указатель при наведении */
+	opacity: 0; /* Начальное состояние */
+	max-height: 0; /* Начальная высота */
+	overflow: hidden; /* Скрываем переполнение */
+	transition: opacity 0.7s ease, max-height 0.7s ease; /* Плавные переходы */
+	position: absolute;
+	padding:10px 20px;
+	margin: 5px;
+	top: 40px;
+	background-color: #f8f0f0;
+	border-radius: 5px;
+	width: 160px;
+	
+}
+
+.sub-item.show {
+	opacity: 1; /* Полная видимость */
+	max-height: 500px; /* Устанавливаем максимальную высоту для показа */
+}
+.sub-sub-item {
+
+	display: none; /* Скрываем подпункты изначально */
+	transition-duration: 0.8s;
+	color: rgb(137, 135, 132);
+}
+
+a:hover{
+	color: #a42828;
+}
+
+/* Показываем подменю при наведении на главный пункт */
+.menu-item:hover + .sub-item {
+	display: block;
+	opacity: 1; /* Полная видимость */
+	max-height: 500px; /* Устанавливаем максимальную высоту для показа */
+
+}
+
+/* Показываем подпункты при наведении на пункт */
+.item:hover .sub-sub-item {
+	display: block;
+}
+
+.sub-item:hover {
+	opacity: 1; /* Полная видимость */
+    max-height: 500px; /* Устанавливаем максимальную высоту для показа */
+	
+}
+
+.content{
+	height: 90vh;
+}
+
+.footer {
+	background-color: #ebd9d9;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+height: 50px;
+
+}
+
+
+table {
+	width: 100%;
+	border-top: 7px solid rgb(177, 164, 164);
+	border-collapse: collapse;
+	text-align: center;
+	margin-bottom: 20px;
+	border: 1px solid #dddddd;
+}
+
+td {
+	text-align: left;
+	padding: 10px;
+	border: 3px solid rgb(177, 164, 164);
+}
+
+th {
+	text-align: center;
+	padding: 10px;
+	border: 3px solid rgb(177, 164, 164);
+}
+
+/* Стиль для модального окна */
+.modal {
+	text-align: center;
+	color: #fff;
+	display: none; /* Скрыто по умолчанию */
+	position: fixed; /* Открывается поверх всего */
+	z-index: 1; /* Поверх других элементов */
+	left: 0;
+	top: 0;
+	width: 100%; /* Ширина экрана */
+	height: 100%; /* Высота экрана */
+	background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон */
+}
+.modal input, .modal select {
+	width: 80%;
+	height: 30px;
+	border-radius: 5px;
+	margin: 5px;
+}
+.modal button {
+	margin-top: 10px;
+	width: 150px;
+	height: 35px;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 20px;
+	background-color: #907a7a;
+	box-shadow: 5px 5px 5px rgb(78, 75, 75);
+	transition: 0.3s;
+	cursor: pointer; /* Указатель при наведении */
+}
+.modal button:hover {
+	background-color: #5f5858;
+	transition: 0.3s;
+}
+.modal-content {
+	background-color: #a89b9b; /* фон для содержимого */
+	margin: 10px auto; /* Центрирование по вертикали */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 40%; /* Ширина модального окна */
+}
+.close {
+	color: #161515; /* Цвет для кнопки закрытия */
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.close:hover,
+.close:focus {
+	color: black; /* Цвет при наведении */
+	text-decoration: none;
+	cursor: pointer;
+}
