@@ -1,5 +1,4 @@
-<?php require_once("./model/m_organization.php"); ?>
-
+<div class="block-content">
 <table>
 	<thead>
 		<tr>
@@ -11,7 +10,8 @@
 	</thead>
 	<tbody>
 		<?php
-		$number = 1;
+		require_once("model/m_organization.php");
+		$number = 1;//порядковый номер для таблицы
 		foreach ($organizations as $organization): ?>
 			<tr>
 				<td><?=$number?></td>
@@ -26,4 +26,5 @@
 			</tr>
 	</tbody>
 </table>
+</div>
 

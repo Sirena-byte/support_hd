@@ -1,8 +1,10 @@
 <?php
 require_once("./core/c_organization.php");
 require_once("./core/core.php");
+//require_once("m_footer.php");
+require_once("set_rows.php");
 
-$organizations = getOrganizations();
+$organizations = getOrganizations($rowsPageStart,$rowsPageFinish);
 $isError = false;
 
 $organization = [];
