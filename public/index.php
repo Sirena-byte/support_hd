@@ -27,9 +27,7 @@
             }
             ?>
         </div>
-        <div class="footer">
-            <?php require_once("template/footer.php") ?>
-        </div>
+        
     
 </body>
 </html>

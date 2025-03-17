@@ -15,10 +15,17 @@ document.addEventListener('DOMContentLoaded', function() {
 						 console.log('Данные успешно получены:', data);
 						 document.getElementById('display-rows').innerText = 
 							  'Отображаются строки с 1 по ' + data.finish; // Обновляем текст
+						 
+						 // Получаем обновленные данные для таблицы
+						 return fetch('C:/OSPanel/home/support-hd/public/pages/organization.php?rows=' + rowsPerPage);
 					} else {
-						 // Отображение ошибки только в консоль
 						 console.error('Ошибка:', data.message);
 					}
+			  })
+			  .then(response => response.text())
+			  .then(html => {
+					// Обновляем содержимое таблицы
+					document.querySelector('.block-content').innerHTML = html;
 			  })
 			  .catch(error => console.error('Ошибка:', error));
 	});

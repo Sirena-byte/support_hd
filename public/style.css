@@ -31,7 +31,7 @@ li {
 	justify-content: space-between;
 	background-color: #ebd9d9;
 	align-items: end;
-z-index: 1;
+	z-index: 1;
 }
 
 .logo {
@@ -177,9 +177,11 @@ a:hover {
 	min-height: 100%;
 	padding-bottom: 40px;
 }
-.block-content{
-	padding-top: 71px;
+
+.block-content {
+	padding-top: 90px;
 }
+
 .footer {
 	position: fixed;
 	background-color: #ebd9d9;
@@ -196,7 +198,7 @@ a:hover {
 	width: 600px;
 	height: 400px;
 	position: absolute;
-	top:17%;
+	top: 17%;
 	left: 25%;
 	text-align: center;
 	box-shadow: 5px 5px 5px rgb(177, 164, 164);
@@ -332,42 +334,95 @@ th {
 	text-decoration: none;
 	cursor: pointer;
 }
-.errorDB{
-	font-size: 50px;
-	color:red;
-	padding-top: 200px;
+
+.errorDB {
+	font-size: 20px;
+	color: red;
+	padding-top: 2px;
+	position: absolute;
+	bottom: 0;
+	left: 40%;
 }
+
 /*-----------------------------------------------------*/
 .footer-content {
 	display: flex;
 	justify-content: space-between;
 	padding: 10px 20px;
-	margin-top: 10px;
-}
-.footer-content-selection {
-	display: inline-block;
-	width: 200px;
-}
-.footer-information {
-	font-size: 0;
-}
-#display-rows{
-	font-size: 17px;
 }
 
+.footer-count-entries {
+	position: relative;
+	/* Относительное позиционирование для контейнера */
+}
+
+.content-selection {
+	display: none;
+	/* Скрытие по умолчанию */
+	position: absolute;
+	/* Абсолютное позиционирование для выпадающего меню */
+	background-color: white;
+	/* Фоновый цвет */
+	border: 1px solid #ccc;
+	/* Граница */
+	padding: 10px;
+	/* Отступы */
+	z-index: 1000;
+	/* Чтобы блок был выше других элементов */
+	top: -180px;
+	left: -5px;
+	opacity: 0;
+	/* Начальная непрозрачность */
+	transition: opacity 0.3s ease, visibility 0.3s ease;
+	/* Плавный переход */
+	visibility: hidden;
+	/* Скрытие элемента */
+
+}
+.footer{
+	font-size: 15px;
+}
+
+.selection-item button {
+	padding: 2px 50px;
+}
+
+.selection-item {}
+
+.start {}
+
+.footer-count-entries:hover .content-selection {
+	display: block;
+	display: block;
+	/* Показать блок при наведении на родителя */
+	opacity: 1;
+	/* Полная непрозрачность */
+	visibility: visible;
+	/* Сделать элемент видимым */
+}
+
+/* Дополнительные стили для списка, если нужно */
+.content-selection li {
+	list-style-type: none;
+	/* Убрать маркеры списка */
+	margin: 5px 0;
+	/* Отступы между элементами списка */
+}
+.form{
+	padding: 5px;
+	background-color: #fdf9f9;
+	border-radius: 5px;
+}
+
+.footer-navigation {
+	display: flex;
+	flex-direction: row;
+}
 .nav-content {
 	display: flex;
 	flex-direction: row;
 }
-.item-nav{
-	margin:0 10px;
+.item-nav {
 }
 .nav-page {
-	display: flex;
-}
-.item{
-	margin: 0 10px;
-}
-.item a{
-	padding:0 5px;
 }
