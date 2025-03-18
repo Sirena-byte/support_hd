@@ -17,7 +17,9 @@ a {
 li {
 	padding: 5px;
 }
-
+button{
+	cursor: pointer;
+}
 .container {
 	position: relative;
 	margin: 0;
@@ -320,7 +322,6 @@ th {
 
 .close {
 	color: #161515;
-	/* Цвет для кнопки закрытия */
 	float: right;
 	font-size: 28px;
 	font-weight: bold;
@@ -353,7 +354,8 @@ th {
 
 .footer-count-entries {
 	position: relative;
-	/* Относительное позиционирование для контейнера */
+	border-radius: 5px;
+	cursor: pointer;
 }
 
 .content-selection {
@@ -367,6 +369,7 @@ th {
 	/* Граница */
 	padding: 10px;
 	/* Отступы */
+
 	z-index: 1000;
 	/* Чтобы блок был выше других элементов */
 	top: -180px;
@@ -379,7 +382,8 @@ th {
 	/* Скрытие элемента */
 
 }
-.footer{
+
+.footer {
 	font-size: 15px;
 }
 
@@ -401,28 +405,41 @@ th {
 	/* Сделать элемент видимым */
 }
 
-/* Дополнительные стили для списка, если нужно */
 .content-selection li {
 	list-style-type: none;
-	/* Убрать маркеры списка */
 	margin: 5px 0;
-	/* Отступы между элементами списка */
 }
-.form{
+
+.form {
 	padding: 5px;
 	background-color: #fdf9f9;
 	border-radius: 5px;
 }
 
-.footer-navigation {
+.footer-navigation  {
+min-width: 100px;
+}
+
+.nav-content form{
 	display: flex;
 	flex-direction: row;
 }
-.nav-content {
-	display: flex;
-	flex-direction: row;
-}
+
 .item-nav {
+	margin: 2px;
+	padding: 2px;
 }
-.nav-page {
+
+.item-nav button {
+	background-color: transparent;
+	border: 0;
+}
+
+.nav-page form{
+	display: flex;
+	flex-direction: row;
+}
+.nav-page button{
+	padding:0 5px;
+	margin:0 5px;;
 }
