@@ -2,7 +2,6 @@
 require_once("core/c_organization.php");
 
 $countPage = [10, 20, 30, 60];
-//$organizations = getOrganizations(1, 25);
 $start = 1;
 $finish = 25;
 $count = $_POST['recordsCount'] ?? 25;
@@ -15,19 +14,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		} else {
 			switch ($_POST['recordsCount']) {
 				case "$countPage[0]":
-					$finish = 10 ?? $countAllOrganization;
+					$finish = $countPage[0] ?? $countAllOrganization;
 					break;
-				case "20":
-					$finish = 20 ?? $countAllOrganization;
+				case "$countPage[1]":
+					$finish = $countPage[1] ?? $countAllOrganization;
 					break;
-				case "30":
-					$finish = 30 ?? $countAllOrganization;
+				case "$countPage[2]":
+					$finish = $countPage[2] ?? $countAllOrganization;
 					break;
-				case "60":
-					$finish = 60 ?? $countAllOrganization;
+				case "$countPage[3]":
+					$finish = $countPage[3] ?? $countAllOrganization;
 					break;
 			}
 		}
 	}
 	$organizations = getOrganizations($start, $finish);
+}
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+	if (isset($_POST['pageGroup']) || isset($_POST['recordsCount'])) {
+		$temp = $count;
+		$numberPage = (int)$_POST['pageGroup'] ?? 1; //получаем номер нажатой страницы
+		if ($numberPage > 1) {
+
+			$finish *= $numberPage;
+			$start = $temp;
+			$organizations = 	getOrganizations($start, $finish);
+		}
+	} 
+	echo "start = " . $start . ", finish = " . $finish . ", temp = " . $temp . ", numberPage = " . $numberPage;
 }
