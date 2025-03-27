@@ -5,36 +5,33 @@
 			<ul class="menu">
 				<li class="item-menu dropdown">
 					<div class="menu-item">
-						<img src="template/icon/settings.gif" alt="">
+						<img src="template/icon/settings.png" alt="">
 					   <p>Администрирование</p>
 					</div>
 					<ul class="sub-item">
 						<li class="item">Пользователи
 							 <ul class="sub-sub-item">
 								  <li><a href="?page=employees">Список</a></li>
-								  <li><a href="#" class="openModal">Создать</a></li>
-								  <li><a href="?page=test2">пункт 1-3</a></li>
+								  <li><a href="?page=addEmployee" class="">Создать</a></li>
 							 </ul>
 						</li>
 						<li class="item">Группы
 							 <ul class="sub-sub-item">
 								  <li><a href="#">Список</a></li>
 								  <li><a href="#">Создать</a></li>
-								  <li>пункт 2-3</li>
 							 </ul>
 						</li>
 						<li class="item">Организации
 							 <ul class="sub-sub-item">
 								  <li><a href="?page=organization">Список</a></li>
 								  <li><a href="?page=addOrganization">Создать</a></li>
-								  <li>пункт 3-3</li>
 							 </ul>
 						</li>
 				  </ul>
 					</li>
 					<li class="item-menu dropdown">
 						<div class="menu-item">
-							<img src="template/icon/support.gif" alt="">
+							<img src="template/icon/support2.png" alt="">
 							<p>Поддержка</p>
 						</div>
 						<ul class="sub-item">
@@ -63,7 +60,7 @@
 						</li>
 						<li class="item-menu dropdown">
 							<div class="menu-item">
-								<img src="template/icon/knowlege.gif" alt="">
+								<img src="template/icon/knowlege.png" alt="">
 								<p>База знаний</p>
 							</div>
 							<ul class="sub-item">
@@ -92,7 +89,7 @@
 							</li>
 							<li class="item-menu dropdown">
 								<div class="menu-item">
-									<img src="template/icon/user_men.gif" alt="">
+									<img src="template/icon/user_men.png" alt="">
 									<p><?=$login ?? 'Личный кабинет'?></p>
 								</div>
 								<ul class="sub-item">

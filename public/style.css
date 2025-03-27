@@ -6,6 +6,7 @@
 html,
 body {
 	height: 100%;
+	background-color: #eeebeb;
 
 }
 
@@ -31,7 +32,7 @@ button{
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
-	background-color: #ebd9d9;
+	background-color: #5CCCCC	;
 	align-items: end;
 	z-index: 1;
 }
@@ -53,7 +54,7 @@ span {
 	position: absolute;
 	top: 40px;
 	left: 135px;
-	color: #413c3c;
+	color: #757070;
 }
 
 .menu {
@@ -185,7 +186,7 @@ a:hover {
 
 .footer {
 	position: fixed;
-	background-color: #ebd9d9;
+	background-color: #5CCCCC;
 	height: 60px;
 	left: 0;
 	bottom: 0;
@@ -253,6 +254,9 @@ td {
 	text-align: left;
 	padding: 7px;
 	border: 3px solid rgb(177, 164, 164);
+}
+tr:hover{
+	background-color: #fff;
 }
 
 th {
@@ -419,7 +423,7 @@ th {
 min-width: 100px;
 }
 
-.nav-content form{
+.nav-content{
 	display: flex;
 	flex-direction: row;
 }
@@ -434,11 +438,22 @@ min-width: 100px;
 	border: 0;
 }
 
-.nav-page form{
+.nav-page {
 	display: flex;
 	flex-direction: row;
 }
 .nav-page button{
 	padding:0 5px;
 	margin:0 5px;;
+}
+.edit-column{
+	max-width: 30px; /* Фиксированная ширина для колонки Редактирование */
+}
+.edit-sell{
+	width: 30px;
+}
+.admin-btn img{
+	width: 20px;
+	height: 20px;
+	object-fit: contain;
 }

@@ -7,7 +7,13 @@ $err = '';
 
 function getOrganizations($start, $finish): array
 {
-	$sql = "SELECT `name`, `addres`, `isActive` FROM `organizations` LIMIT $finish OFFSET $start";
+	$sql = "SELECT * FROM `organizations` LIMIT $finish OFFSET $start";
+	$query = dbQuery($sql);
+	return $query->fetchAll();
+}
+
+function getOrganization($id): array{
+	$sql = "SELECT name, addres FROM `organizations` WHERE id_organization = $id";
 	$query = dbQuery($sql);
 	return $query->fetchAll();
 }
