@@ -20,7 +20,7 @@ function getOrganization($id): array{
 
 function getFullOrganizations(): array
 {
-	$sql = "SELECT `name`, `addres`, `isActive` FROM `organizations`";
+	$sql = "SELECT `name`, `addres`FROM `organizations`";
 	$query = dbQuery($sql);
 	return $query->fetchAll();
 }
@@ -37,7 +37,7 @@ function getCountOrganizations() {
 	
 	return 0; // Возвращаем 0, если запрос не удался
 }
-
+/*
 //замена симола статуса на строковое значение при печати
 function replaceStatus($status): string
 {
@@ -48,7 +48,7 @@ function replaceStatus($status): string
 	}
 	return $status;
 }
-
+*/
 function handleRequest($error, $organization)
 {
 	ob_start();

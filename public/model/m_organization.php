@@ -1,17 +1,28 @@
 <?php
-require_once("./core/c_organization.php");
-require_once("./core/core.php");
-//require_once("m_footer.php");
-//require_once("set_rows.php");
+// Подключаем необходимые файлы для работы с организациями и основным функционалом
+require_once("./core/c_organization.php"); // Файл для работы с организациями
+require_once("./core/core.php"); // Основной файл с функционалом приложения
+
+// Переменная для отслеживания наличия ошибок
 $isError = false;
 
+// Массив для хранения информации об организации, полученной из формы
 $organization = [];
+
+// Проверяем, была ли форма отправлена через метод POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-	if ($_POST['name'] === ''|| $_POST['addres'] === '') {
-		$isError = true;
-	} else {
-		$isError = false;
-		$organization = $_POST;
-		handleRequest($isError,$organization);
-	}
+    // Проверяем, заполнены ли обязательные поля 'name' и 'addres'
+    if ($_POST['name'] === '' || $_POST['addres'] === '') {
+        // Если одно из полей пустое, устанавливаем переменную $isError в true
+        $isError = true;
+    } else {
+        // Если оба поля заполнены, сбрасываем флаг ошибки
+        $isError = false;
+        
+        // Заполняем массив $organization данными из POST
+        $organization = $_POST;
+
+        // Обрабатываем запрос, передавая информацию об ошибке и данные организации
+        handleRequest($isError, $organization);
+    }
 }

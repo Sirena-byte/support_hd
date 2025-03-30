@@ -1,11 +1,11 @@
 <div class="logo">
-				<p>HelpDesk</p>
+				<p>HD</p>
 				<span>support</span>
 			</div>
 			<ul class="menu">
 				<li class="item-menu dropdown">
 					<div class="menu-item">
-						<img src="template/icon/settings.png" alt="">
+						<img src="template/icon/setting.png" alt="">
 					   <p>Администрирование</p>
 					</div>
 					<ul class="sub-item">
@@ -31,7 +31,7 @@
 					</li>
 					<li class="item-menu dropdown">
 						<div class="menu-item">
-							<img src="template/icon/support2.png" alt="">
+							<img src="template/icon/support.png" alt="">
 							<p>Поддержка</p>
 						</div>
 						<ul class="sub-item">
@@ -60,7 +60,7 @@
 						</li>
 						<li class="item-menu dropdown">
 							<div class="menu-item">
-								<img src="template/icon/knowlege.png" alt="">
+								<img src="template/icon/education.png" alt="">
 								<p>База знаний</p>
 							</div>
 							<ul class="sub-item">
