@@ -5,7 +5,7 @@
 			<ul class="menu">
 				<li class="item-menu dropdown">
 					<div class="menu-item">
-						<img src="template/icon/setting.png" alt="">
+						<img src="template/icon/settings.png" alt="">
 					   <p>Администрирование</p>
 					</div>
 					<ul class="sub-item">
@@ -13,12 +13,6 @@
 							 <ul class="sub-sub-item">
 								  <li><a href="?page=employees">Список</a></li>
 								  <li><a href="?page=addEmployee" class="">Создать</a></li>
-							 </ul>
-						</li>
-						<li class="item">Группы
-							 <ul class="sub-sub-item">
-								  <li><a href="#">Список</a></li>
-								  <li><a href="#">Создать</a></li>
 							 </ul>
 						</li>
 						<li class="item">Организации
@@ -31,14 +25,14 @@
 					</li>
 					<li class="item-menu dropdown">
 						<div class="menu-item">
-							<img src="template/icon/support.png" alt="">
+							<img src="template/icon/support2.png" alt="">
 							<p>Поддержка</p>
 						</div>
 						<ul class="sub-item">
-							<li class="item">пункт 1
+							<li class="item">Заявки
 								 <ul class="sub-sub-item">
-									  <li><a href="#">пункт 1-1</a></li>
-									  <li>пункт 1-2</li>
+									  <li><a href="?page=tasks">Список</a></li>
+									  <li><a href="?page=addtask">Создать</a></li>
 									  <li>пункт 1-3</li>
 								 </ul>
 							</li>
@@ -60,7 +54,7 @@
 						</li>
 						<li class="item-menu dropdown">
 							<div class="menu-item">
-								<img src="template/icon/education.png" alt="">
+								<img src="template/icon/knowlege2.png" alt="">
 								<p>База знаний</p>
 							</div>
 							<ul class="sub-item">
@@ -89,14 +83,12 @@
 							</li>
 							<li class="item-menu dropdown">
 								<div class="menu-item">
-									<img src="template/icon/user_men.png" alt="">
+									<img src="template/icon/user.png" alt="">
 									<p><?=$login ?? 'Личный кабинет'?></p>
 								</div>
 								<ul class="sub-item">
-									<li class="item"><a href="#" class="openModal">Войти</a>
-									</li>
-									<li class="item">Настройки
-									</li>
+									<li class="item"><a href="?page=autorization">Выйти</a></li>
+									<li class="item">Настройки</li>
 							  </ul>
 							</li>
 			</ul>

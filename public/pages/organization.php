@@ -5,6 +5,8 @@
 				<th>№</th>
 				<th>id</th>
 				<th>Название организации</th>
+				<th>Адрес</th>
+				<th>test</th>
 				<th class="edit-column" colspan="2"></th>
 			</tr>
 		</thead>

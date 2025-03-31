@@ -7,12 +7,16 @@ $err = '';
 
 function getOrganizations($start, $finish): array
 {
-	$sql = "SELECT * FROM `organizations` LIMIT $finish OFFSET $start";
+	$sql = "SELECT d.id_department, d.name AS department_name,d.address, o.name AS name_organization
+FROM `departments` d
+JOIN `organizations` o ON d.id_organization = o.id_organization
+WHERE d.id_organization = 1 LIMIT $finish OFFSET $start";
 	$query = dbQuery($sql);
 	return $query->fetchAll();
 }
 
-function getOrganization($id): array{
+function getOrganization($id): array
+{
 	$sql = "SELECT name, addres FROM `organizations` WHERE id_organization = $id";
 	$query = dbQuery($sql);
 	return $query->fetchAll();
@@ -25,16 +29,17 @@ function getFullOrganizations(): array
 	return $query->fetchAll();
 }
 
-function getCountOrganizations() {
+function getCountOrganizations()
+{
 	$sql = "SELECT COUNT(*) AS total_records FROM `organizations`";
 	$query = dbQuery($sql);
-	
+
 	// Извлекаем результат из объекта PDOStatement
 	if ($query) {
-		 $result = $query->fetch(PDO::FETCH_ASSOC);
-		 return $result['total_records'];
+		$result = $query->fetch(PDO::FETCH_ASSOC);
+		return $result['total_records'];
 	}
-	
+
 	return 0; // Возвращаем 0, если запрос не удался
 }
 /*
@@ -52,21 +57,21 @@ function replaceStatus($status): string
 function handleRequest($error, $organization)
 {
 	ob_start();
-    // Проверяем, был ли запрос методом POST
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Получаем и обрабатываем данные из формы
-        $organization = extractFields($_POST, ['name', 'addres']); // Исправлено 'addres' на 'address'
+	// Проверяем, был ли запрос методом POST
+	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+		// Получаем и обрабатываем данные из формы
+		$organization = extractFields($_POST, ['name', 'addres']); // Исправлено 'addres' на 'address'
 
-        // Валидация данных перед добавлением
-        if (!$error) {
-            // Если валидация прошла успешно, добавляем организацию
-            organizationAdd($organization); 
-				header('Location: ?page=organization'); // Указываем адрес для перенаправления
-            ob_end_flush(); // Отправляем содержимое буфера
-            exit();
-        }
-    }
-	 ob_end_flush();
+		// Валидация данных перед добавлением
+		if (!$error) {
+			// Если валидация прошла успешно, добавляем организацию
+			organizationAdd($organization);
+			header('Location: ?page=organization'); // Указываем адрес для перенаправления
+			ob_end_flush(); // Отправляем содержимое буфера
+			exit();
+		}
+	}
+	ob_end_flush();
 }
 function organizationAdd(array $organization): bool
 {
@@ -75,15 +80,16 @@ function organizationAdd(array $organization): bool
 	return true;
 }
 
-function genericForm(){
-		echo "<div class=\"succsess\">";
-		echo "<h1>Данные успешно добавлены</h1>";
-		echo "<a href=\"pages/organization.php\">test</a>";
-		echo "</div>";
-		print_r($_GET['page']);
+function genericForm()
+{
+	echo "<div class=\"succsess\">";
+	echo "<h1>Данные успешно добавлены</h1>";
+	echo "<a href=\"pages/organization.php\">test</a>";
+	echo "</div>";
+	print_r($_GET['page']);
 }
 
-function test(){
+function test()
+{
 	return "test-test";
 }
-

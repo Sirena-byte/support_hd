@@ -36,7 +36,7 @@ input{
 	display: flex;
 	justify-content: space-between;
 	/*background-color: #494747	;*/
-	background-color: #888383;
+	background-color: #554a4a;
 	align-items: end;
 	z-index: 1;
 }
@@ -65,20 +65,21 @@ span {
 	justify-content: space-between;
 	align-items: end;
 	margin: 0px 0 6px 0;
+	margin-left: 105px;
 }
 
 .item-menu {
 	display: flex;
-	align-items: start;
+	align-items: center;
 	list-style-type: none;
 	margin: 0 10px;
-	width: 200px;
+	width: 180px;
 	border-radius: 5px;
-	border:solid 1px #fbfdfd;
+	border:solid 1px #282a2a;
 	color: #c9bfbf;
 	justify-content: center;
 	align-items: center;
-	height: 30px;
+	height: 25px;
 	position: relative;
 	/* Добавлено для правильного позиционирования выпадающего меню */
 }
@@ -91,15 +92,14 @@ span {
 }
 
 .item-menu img {
-	width: 40px;
-	height: 40px;
+	width: 25px;
+	height: 25px;
 	margin: 0;
 	padding: 0;
 }
 
 .dropdown {
 	position: relative;
-	display: inline-block;
 
 }
 
@@ -108,11 +108,13 @@ span {
 	/* Указатель при наведении */
 	display: flex;
 	text-align: center;
+	justify-content: center;
+	align-items: center;
 
 }
 .menu-item img{
-	width: 30px;
-	height: 30px;
+	width: 25px;
+	height: 25px;
 }
 
 .menu-item p {
@@ -195,7 +197,7 @@ a:hover {
 
 .footer {
 	position: fixed;
-	background-color: #DFD5CC;
+	background-color: #888383;
 	height: 60px;
 	left: 0;
 	bottom: 0;
@@ -204,7 +206,7 @@ a:hover {
 
 .addata {
 	color: #5e5959;
-	background-color: #ebd9d9;
+	background-color: #888383;
 	padding: 30px;
 	width: 600px;
 	height: 400px;
@@ -323,6 +325,10 @@ justify-content: start;
 	margin-top: 40px;
 	color: red;
 	font-size: 20px;
+	position: absolute;
+	top: 15px;
+	left: 38%;
+	text-align: center;
 }
 
 .addata button:hover {
